@@ -31,6 +31,7 @@ WIP
 Packages Used
 -----------------
 - [React Bootstrap](https://react-bootstrap.github.io/)
+- [React FontAwesome](https://fontawesome.com/how-to-use/on-the-web/using-with/react)
 
 Useful References
 -----------------
