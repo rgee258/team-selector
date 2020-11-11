@@ -1,3 +1,11 @@
-.teamForm {
-  
+.faIcon {
+  margin-right: 0.5em;
+}
+
+.formSeparationBreak {
+  width: 52%;
+}
+
+.form-submit {
+  background-color: goldenrod;
 }

@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import '../css/styles.css';
 
 const MainHeader = () => {
   return (
-    <div className="main-header">
+    <Container fluid className="main-header p-0">
       <Navbar variant="dark" bg="dark">
         <Navbar.Brand>
+          <FontAwesomeIcon className="faIcon" icon={ faUsers } />
           Team Selector
         </Navbar.Brand>
       </Navbar>
-    </div>
+    </Container>
   );
 }
 

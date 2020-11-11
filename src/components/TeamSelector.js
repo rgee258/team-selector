@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container';
 import MainHeader from './MainHeader';
 import TeamInput from './TeamInput';
 import TeamResults from './TeamResults';
@@ -10,16 +10,18 @@ class TeamSelector extends Component {
     super(props);
 
     this.state = {
+      names: [],
+      separations: [],
       showTeams: false
     }
   }
 
   render() {
     return (
-      <div className="team-selector">
+      <Container fluid className="p-0 team-selector">
         <MainHeader />
         <TeamInput />
-      </div>
+      </Container>
     );
   }
 }
