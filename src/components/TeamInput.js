@@ -45,12 +45,18 @@ class TeamInput extends Component {
     });
   }
 
+  formSubmit = (e) => {
+    e.preventDefault();
+
+    this.props.displayTeams(this.state.names, this.state.separations);
+  }
+
   render() {
     return (
       <Container className="teamForm text-center">
         <h2 className="mt-3">Team Information</h2>
         {/* TODO: Add onSubmit from props */}
-        <Form>
+        <Form onSubmit={ this.formSubmit }>
           <Form.Group className="formNames">
             <Form.Label className="formNamesLabel mb-3 mt-3">Member Names</Form.Label>
             <Form.Row className="formNamesRow">
@@ -92,7 +98,7 @@ class TeamInput extends Component {
               <Col md="3"></Col>
               <Col>
                 <Form.Control id="formNameSeparate0" as="select" onChange={this.setSeparation} value={this.state.separations[0]}>
-                  <option key="separateOption0"></option>
+                  <option key="separateOption0" value=""></option>
                   { 
                     this.state.names.filter((name) => {
                       if (name !== '') { return true; }
@@ -107,7 +113,7 @@ class TeamInput extends Component {
               </Col>
               <Col>
                 <Form.Control id="formNameSeparate1" as="select" onChange={this.setSeparation} value={this.state.separations[1]}>
-                  <option key="separateOption0"></option>
+                  <option key="separateOption0" value=""></option>
                   { 
                     this.state.names.filter((name) => {
                       if (name !== '') { return true; }
@@ -127,7 +133,7 @@ class TeamInput extends Component {
               <Col md="3"></Col>
               <Col>
                 <Form.Control id="formNameSeparate2" as="select" onChange={this.setSeparation} value={this.state.separations[2]}>
-                  <option key="separateOption0"></option>
+                  <option key="separateOption0" value=""></option>
                   { 
                     this.state.names.filter((name) => {
                       if (name !== '') { return true; }
@@ -142,7 +148,7 @@ class TeamInput extends Component {
               </Col>
               <Col>
                 <Form.Control id="formNameSeparate3" as="select" onChange={this.setSeparation} value={this.state.separations[3]}>
-                  <option key="separateOption0"></option>
+                  <option key="separateOption0" value=""></option>
                   { 
                     this.state.names.filter((name) => {
                       if (name !== '') { return true; }
@@ -162,7 +168,7 @@ class TeamInput extends Component {
               <Col md="3"></Col>
               <Col>
                 <Form.Control id="formNameSeparate4" as="select" onChange={this.setSeparation} value={this.state.separations[4]}>
-                  <option key="separateOption0"></option>
+                  <option key="separateOption0" value=""></option>
                   { 
                     this.state.names.filter((name) => {
                       if (name !== '') { return true; }
@@ -177,7 +183,7 @@ class TeamInput extends Component {
               </Col>
               <Col>
                 <Form.Control id="formNameSeparate5" as="select" onChange={this.setSeparation} value={this.state.separations[5]}>
-                  <option key="separateOption0"></option>
+                  <option key="separateOption0" value=""></option>
                   { 
                     this.state.names.filter((name) => {
                       if (name !== '') { return true; }
@@ -193,7 +199,7 @@ class TeamInput extends Component {
               <Col md="3"></Col>
             </Form.Row>
           </Form.Group>
-          <Button className="form-submit" type="submit">Create Team</Button>
+          <Button className="formSubmit" type="submit">Create Team</Button>
         </Form>
       </Container>
     );

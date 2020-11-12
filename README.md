@@ -28,7 +28,7 @@ Usage
 
 WIP
 
-Packages Used
+Main Modules Used
 -----------------
 - [React Bootstrap](https://react-bootstrap.github.io/)
 - [React FontAwesome](https://fontawesome.com/how-to-use/on-the-web/using-with/react)
@@ -36,3 +36,6 @@ Packages Used
 Useful References
 -----------------
 - [Using Arrays in React State](https://www.robinwieruch.de/react-state-array-add-update-remove)
+- [Fisher-Yates/Knuth Shuffle for Randomizing](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
+- [Knuth Shuffle Implementation](https://medium.com/@joshfoster_14132/best-javascript-shuffle-algorithm-c2c8057a3bc1)
+- [Identifying Loops with Labels in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label)
