@@ -2,7 +2,7 @@
 
 This repo contains a custom team selector to make it easier for assembling teams for games. However some times when making teams between players you know, you might want to avoid having certain groupings on the same team. You are able to do so by identifying player pairings you want separated between teams to make team assembling easier.
 
-[Try it out on Heroku!]()
+[Try it out on Heroku!](https://rg-team-selector.herokuapp.com/)
 
 Setup
 -----
@@ -53,4 +53,5 @@ Useful References
 - [Using Arrays in React State](https://www.robinwieruch.de/react-state-array-add-update-remove)
 - [Fisher-Yates/Knuth Shuffle for Randomizing](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
 - [Knuth Shuffle Implementation](https://medium.com/@joshfoster_14132/best-javascript-shuffle-algorithm-c2c8057a3bc1)
-- [Identifying Loops with Labels in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label)
+- [Identifying Loops With Labels in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label)
+- [Relational Spacing Unit Guide in CSS](https://dev.to/5t3ph/guide-to-css-units-for-relational-spacing-1mj5)
