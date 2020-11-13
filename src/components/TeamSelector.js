@@ -1,36 +1,57 @@
+/**
+* TeamSelector.js
+*
+* Main class based component used for conditionally rendering team input
+* and results data. Contains maintenance of state that does not
+* belong to any controlled components.
+**/
+
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import MainHeader from './MainHeader';
 import TeamInput from './TeamInput';
 import TeamResults from './TeamResults';
-import '../css/styles.css';
 
 class TeamSelector extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      names: ['', '', '', '', '', '', '', ''],
+      separations: ['', '', '', '', '', ''],
       teamOne: [],
       teamTwo: [],
-      showTeams: false
+      showInput: true
     }
   }
 
+  // displayTeams()
+  // Callback for teamInput
+  // Creates teams and sets the internal state of teamSelector
   displayTeams = (names, separations) => {
     const separatedPairs = this.getSeparatedPairs(separations);
     const teams = this.makeTeams(names, separatedPairs);
 
     this.setState({
+      names,
+      separations,
       teamOne: teams[0],
       teamTwo: teams[1],
-      showTeams: true
+      showInput: false
     })
   }
 
+  // displayInput()
+  // Callback for teamResults for conditional rendering
   displayInput = () => {
-    this.setState({ showTeams: false });
+    this.setState({ showInput: true });
   }
 
+  // makeTeams()
+  // Uses names array and subarrays of separatedPairs to generate
+  //  randomized teams
+  // Will attempt to randomize the teams up to 100 times before stopping
+  // Returns an array of subarrays for each team
   makeTeams = (names, separatedPairs) => {
     // Handle case if names or separated pairs are 0
     if (separatedPairs.length === 0 || names.length === 0) {
@@ -64,6 +85,9 @@ class TeamSelector extends Component {
 
   }
 
+  // getSeparatedPairs()
+  // Splits the separations array into array pairings of length 2 in order from the form
+  // Returns an array of subarrays of name pairs
   getSeparatedPairs = (separations) => {
     const separatedPairs = [];
 
@@ -80,6 +104,10 @@ class TeamSelector extends Component {
     return separatedPairs;
   }
 
+  // shuffle()
+  // Implementation of the Fisher-Yates/Knuth Shuffle
+  // MUTATES the input array
+  // returns the input array with shuffled values
   shuffle = (shuffleArr) => {
     let currentIndex = shuffleArr.length, temp, randomIndex;
 
@@ -101,8 +129,10 @@ class TeamSelector extends Component {
     return (
       <Container fluid className="p-0 team-selector">
         <MainHeader />
-        <TeamInput displayTeams={this.displayTeams} />
-        <TeamResults teamOne={this.state.teamOne} teamTwo={this.state.teamTwo} displayInput={this.displayInput} />
+        { this.state.showInput
+          ? <TeamInput displayTeams={this.displayTeams} names={this.state.names} separations={this.state.separations} />
+          : <TeamResults teamOne={this.state.teamOne} teamTwo={this.state.teamTwo} displayInput={this.displayInput} />
+        }
       </Container>
     );
   }

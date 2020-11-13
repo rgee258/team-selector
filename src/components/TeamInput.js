@@ -1,21 +1,29 @@
+/**
+* TeamInput.js
+*
+* Class based component for accepting input used for team creation.
+**/
+
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import '../css/styles.css';
 
 class TeamInput extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      names: ['', '', '', '', '', '', '', ''],
-      separations: ['', '', '', '', '', '']
+      names: this.props.names,
+      separations: this.props.separations
     };
   }
 
+  // setName()
+  // Callback used for the onChange of name text inputs
+  // Maps over the previous state to update the corresponding index and update accordingly
   setName = (e) => {
+    // Retrieve the index of the array to set in state using the event element's id
     const nameIndex = parseInt(e.target.id.match(/\d+/).pop());
     this.setState(state => {
       const names = state.names.map((name, currIndex) => {
@@ -30,7 +38,11 @@ class TeamInput extends Component {
     });
   }
 
+  // setSeparation()
+  // Callback used for the onChange of select inputs
+  // Maps over the previous state to update the corresponding index and update accordingly
   setSeparation = (e) => {
+    // Retrieve the index of the array to set in state using the event element's id
     const separationIndex = parseInt(e.target.id.match(/\d+/).pop());
     this.setState(state => {
       const separations = state.separations.map((separation, currIndex) => {
@@ -45,6 +57,7 @@ class TeamInput extends Component {
     });
   }
 
+  // formSubmit()
   formSubmit = (e) => {
     e.preventDefault();
 
@@ -53,12 +66,11 @@ class TeamInput extends Component {
 
   render() {
     return (
-      <Container className="teamForm text-center">
-        <h2 className="mt-3">Team Information</h2>
-        {/* TODO: Add onSubmit from props */}
+      <Container className="teamForm text-center pb-4">
+        <h2 className="mt-3 mb-4">Team Information</h2>
         <Form onSubmit={ this.formSubmit }>
-          <Form.Group className="formNames">
-            <Form.Label className="formNamesLabel mb-3 mt-3">Member Names</Form.Label>
+          <Form.Group className="formNames pt-1 pb-4">
+            <Form.Label className="formNamesLabel">Member Names</Form.Label>
             <Form.Row className="formNamesRow">
               <Col md="1"></Col>
               <Col>
@@ -92,8 +104,8 @@ class TeamInput extends Component {
               <Col md="1"></Col>
             </Form.Row>
           </Form.Group>
-          <Form.Group className="formSeparations">
-            <Form.Label className="formSeparationsLabel mb-3 mt-3">Separated Members</Form.Label>
+          <Form.Group className="formSeparations pt-1 pb-4">
+            <Form.Label className="formSeparationsLabel">Separated Members</Form.Label>
             <Form.Row className="formSeparationsRow">
               <Col md="3"></Col>
               <Col>
