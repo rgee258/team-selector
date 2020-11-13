@@ -1,7 +1,84 @@
+/* General Styling */
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100vh;
+  background-color: blue;
+  font-family: "Noto Sans JP";
+}
+
+/* TeamSelector Styling */
+
+.team-selector {
+  height: 100vh;
+  color: #DDDDDD;
+  background-color: #292929;
+}
+
+/* MainHeader Styling */
+
 .faIcon {
   margin-right: 0.5em;
 }
 
+.headerNav {
+  background-color: #1F1F1F;
+}
+
+/* TeamInput Styling */
+
+.formNamesLabel, .formSeparationsLabel {
+  font-size: 1.4em;
+}
+
+.formNames, .formSeparations {
+  background-color: #1F1F1F;
+  border-radius: 5px;
+}
+
 .formSeparationBreak {
-  width: 52%;
+  width: 49%;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  background-color: #909090;
+}
+
+.teamForm input, .teamForm select {
+  border: none;
+  color: white;
+  background-color: #5A5A5A;
+}
+
+.teamForm input:focus, .teamForm select:focus {
+  color: white;
+  background-color: #5A5A5A;
+}
+
+/* TeamResults Styling */
+
+.teamOneCol .list-group-item, .teamTwoCol .list-group-item {
+  background-color: #5A5A5A;
+}
+
+.teamOneCol .list-group-item:not(:last-child), .teamTwoCol .list-group-item:not(:last-child) {
+  border-bottom-color: #909090;
+}
+
+.teamOneCol, .teamTwoCol {
+  background-color: #1F1F1F;
+}
+
+.teamOneCol {
+  border-radius: 10px 0 0 10px;
+  border-right: 1px solid #5A5A5A;
+  color: #FF9900;
+}
+
+.teamTwoCol {
+  border-radius: 0 10px 10px 0;
+  border-left: 1px solid #5A5A5A;
+  color: #33FF00;
 }
