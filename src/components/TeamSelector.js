@@ -45,6 +45,8 @@ class TeamSelector extends Component {
   // Callback for teamResults for conditional rendering
   displayInput = () => {
     this.setState({ showInput: true });
+    // TODO: setState here for boolean that sets/removes previous team data
+    //  and clear name and separations if needed
   }
 
   // makeTeams()
