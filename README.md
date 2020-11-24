@@ -40,6 +40,7 @@ Future Considerations
 - Improved header
 - Dynamic form with dynamically added name and separations rows
 - Option to save and clear previously entered names and separation pairings
+- Additional team(s) option
 - Error message if team randomizing cannot be fulfilled to separation pairings
 
 Main Modules Used
